@@ -17,7 +17,7 @@ soup = BeautifulSoup(content, features='lxml')
 for span in soup.findAll('span', attrs={'class': 'result-purchase-price tds-text--h4'}, limit=1, string=compile(r'^\$\d{2},\d{3}')):
     price = int(span.text.replace('$', '').replace(',', ''))
     
-    if price < 50000:
+    if price < 49000:
         pag.alert(text=f"Price is ${price:,}", title="Alert")
 
 exit()
